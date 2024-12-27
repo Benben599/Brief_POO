@@ -1,20 +1,25 @@
 class Voiture {
     constructor(marque, modele, annee, couleur) {
-        this.marque = marque;
-        this.modele = modele;
-        this.annee = annee;
-        this.couleur = couleur;
+        this._marque = marque;
+        this._modele = modele;
+        this._annee = annee;
+        this._couleur = couleur;
     }
 
-    afficheDetails() {
-        console.log(this.marque)
-        console.log(this.modele)
-        console.log(this.annee)
-        console.log(this.couleur)
-        return Voiture
+
+
+    get couleurs() {
+        return this._couleur;
+    }
+
+    set couleurs(nouvelleCouleur) {
+        this._couleur = nouvelleCouleur;
     }
 }
 
-const voiture = new Voiture("Toyota", "Yaris", "2002", "Rouge")
+const voiture = new Voiture("Toyota", "Yaris", 2002, "Rouge")
 
-voiture.afficheDetails();
+console.log(voiture.couleurs)
+
+
+
